@@ -5,7 +5,7 @@ export default function Note( props ) {
 
   console.log( props )
   return props.showContent
-    ? ( <div>
+    ? ( <div className="note">
       <Link to={`/note/${ props.id }`}>
         <h2>{props.name}</h2>
       </Link>
@@ -13,7 +13,7 @@ export default function Note( props ) {
       <p>{props.modified}</p>
       <button>Delete Note</button>
     </div> )
-    : ( <div>
+    : ( <div className="note">
       <Link to={`/note/${ props.id }`}>
         <h2>{props.name}</h2>
       </Link>
