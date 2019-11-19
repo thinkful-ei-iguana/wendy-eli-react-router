@@ -1,12 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function Note(props) {
-  return (
-    <div>
-      <h2>{props.name}</h2>
+export default function Note( props ) {
+
+  console.log( props )
+  return props.showContent
+    ? ( <div>
+      <Link to={`/note/${ props.id }`}>
+        <h2>{props.name}</h2>
+      </Link>
+      <p>{props.content}</p>
       <p>{props.modified}</p>
-      <p>{props.poo}</p>
       <button>Delete Note</button>
-    </div>
-  );
+    </div> )
+    : ( <div>
+      <Link to={`/note/${ props.id }`}>
+        <h2>{props.name}</h2>
+      </Link>
+      <p>{props.modified}</p>
+      <button>Delete Note</button>
+    </div> );
 }
